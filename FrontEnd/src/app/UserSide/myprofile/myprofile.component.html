@@ -1,0 +1,319 @@
+<p>
+  <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+    <img
+      class="forimage"
+      src="../../assets/images/download.jpg"
+      style="margin-bottom: 9px"
+      alt="logo"
+    />
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span style="margin-left: 10px">Smartrationing</span>
+    <span class="example-spacer"></span>
+    <div class="Home" style="margin-right: 20px">
+      <button mat-button routerLink="/UserSideComponent">Home</button>
+    </div>
+    <!-- <div class="RationCard" style="margin-right:20px">
+      <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+    </div>  -->
+    <div class="Stocks" style="margin-right: 20px">
+      <button mat-button routerLink="/CardDetailsComponent">RationCard</button>
+    </div>
+    <!-- <div class="OrderProducts" style="margin-right:20px">
+        <button mat-button routerLink="/CheckproductsComponent" >OrderProducts</button>
+      </div>  -->
+    <div class="Orders" style="margin-right: 20px">
+      <button mat-button routerLink="/PlaceOrderComponent">
+        OrderProducts
+      </button>
+    </div>
+
+    <div class="OrderProducts" style="margin-right: 20px">
+      <button mat-button routerLink="/CheckproductsComponent">
+        CheckProducts
+      </button>
+    </div>
+
+    <div class="Orders" style="margin-right: 20px">
+      <button mat-button routerLink="/MyorderDetailsComponent">MyOrders</button>
+    </div>
+    <button
+      class="logoutButton"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      matTooltip="Log Out"
+    >
+      <mat-menu #menu="matMenu">
+        <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+        <!-- <button mat-menu-item >My Profile</button> -->
+        <button mat-menu-item routerLink="/LoginComponent">Log Out</button>
+      </mat-menu>
+      <mat-icon>power_settings_new </mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+<br /><br /><br />
+
+<!-- <div  class="student-profile py-4">
+    <div class="container">
+      <div class="row">
+         <!-- <div style="height:100%"  class="col-lg-12">  -->
+<!-- <div  class="card shadow-md">
+            <div class="card-header bg-transparent text-center">
+             
+              <h3 class="mb-0" style="font-size: 35px;"><mat-icon style="font-size: 50px;width: 60px;height: 45px;">account_circle
+              </mat-icon><b style="margin-top:-100px">My Profile</b></h3>
+            </div>
+            <div class="card-body pt-0" style="padding-left:70px ; padding-right: 70px;">
+              <table style="height:100px" class="table table-bordered">
+                <tr>
+                  <th style="font-size: 25px;padding-bottom:20px;padding-top:15px;" width="30%;" >Name</th>
+                  <td width="2%"style="padding-bottom:20px;padding-top:15px;">:</td>
+                  <td style="font-size: 25px;padding-bottom:20px;padding-top:15px;">{{rationCardMembers.memberName}}</td>
+                </tr>
+                <tr>
+                  <th style="font-size: 25px;padding-bottom:20px;padding-top:15px;" width="30%">Age	</th>
+                  <td width="2%"style="padding-bottom:20px;padding-top:15px;">:</td>
+                  <td style="font-size: 25px;padding-bottom:20px;padding-top:15px;">{{rationCardMembers.age}}</td>
+                </tr>
+                <tr>
+                  <th style="font-size: 25px;padding-bottom:20px;padding-top:15px;" width="30%">Gender</th>
+                  <td width="2%"style="padding-bottom:20px;padding-top:15px;">:</td>
+                  <td style="font-size: 25px;padding-bottom:20px;padding-top:15px;" >{{rationCardMembers.type}}</td>
+                </tr>
+                <tr>
+                  <th style="font-size: 25px;padding-bottom:20px;padding-top:15px;" width="30%">Relation</th>
+                  <td width="2%"style="padding-bottom:20px;padding-top:15px;">:</td>
+                  <td style="font-size: 25px;padding-bottom:20px;padding-top:15px;">{{rationCardMembers.relation}}</td>
+                </tr>
+
+               
+
+                    <div  style="padding-bottom:20px;padding-top:15px;">
+                    <button   (click)="click()" class = "btn btn-primary" style="margin-left: 125%" (click)="onMenu()" > Update Password</button>
+                  
+
+                  
+                  <form [formGroup]="rationcardForm"  (submit)="onSubmit()">
+
+                  
+                
+                
+                  <div *ngIf="val==true">
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="oldPassword"
+                      >Old Password</label>
+                    <input  type="text" id="oldPassword" class="form-control" required="required"  formControlName="oldPassword"  />
+                   </div>
+                  </div>  
+                  <div  *ngIf="rationcardForm.controls['oldPassword'].invalid && (rationcardForm.controls['oldPassword'].dirty || rationcardForm.controls['oldPassword'].touched)" class="alert">
+                    <div *ngIf="rationcardForm.controls['oldPassword'].errors" style="color: red;">
+                    *Please Enter Your Old Password
+                  </div>
+                </div>
+
+                  <div *ngIf="val==true">
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form3Example1q"
+                      >New Password</label>
+                    <input   type="text" id="form3Example1q" class="form-control" name="patientN"   required="required" formControlName="newPassword"  required />
+                  </div>
+                </div>
+                <div  *ngIf="rationcardForm.controls['newPassword'].invalid && (rationcardForm.controls['newPassword'].dirty || rationcardForm.controls['newPassword'].touched)" class="alert">
+                  <div *ngIf="rationcardForm.controls['newPassword'].errors" style="color: red;">
+                  *Please Enter Your New Password
+                </div>
+              </div>
+
+                <div [matTooltip]="'*required allField to submit '"
+                [matTooltipDisabled]="rationcardForm.valid" *ngIf="val==true">
+                <button type="submit" class="btn btn-success btn-lg mb-1"  [disabled]="rationcardForm.invalid" required="required"  >
+                    Submit
+                </button>
+
+            </div>
+
+
+
+                </form>
+
+            </div>
+
+                
+
+
+                 
+
+                
+              
+              
+              </table>
+
+
+             
+              
+            </div>
+          </div>
+         </div>  -->
+<!-- </div> -->
+<!-- </div>
+  </div> -->
+
+<div style="margin-left: 1%" class="page-content page-container" id="page-content">
+  <div class="padding">
+    <div class="row container d-flex justify-content-center">
+      <div class="col-xl-6 col-md-12">
+        <div class="card user-card-full">
+          <div class="row m-l-0 m-r-0">
+            <div class="col-sm-4 bg-c-lite-green user-profile">
+              <div class="card-block text-center text-white">
+                <div class="m-b-25">
+                  <img
+                    src="../../assets/images/download.jpg"
+                    class="img-radius"
+                    alt="User-Profile-Image"
+                  />
+                </div>
+                <h6 class="f-w-600">Ration Card No</h6>
+                <h3>{{rationCardNo}}</h3>
+                <i
+                  class="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"
+                ></i>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600" style="text-align: center">profile</h6>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Name</p>
+                    <h6 class="text-muted f-w-400">{{rationCardMembers.memberName}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Age</p>
+                    <h6 class="text-muted f-w-400">{{rationCardMembers.age}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Gender</p>
+                    <h6 class="text-muted f-w-400">{{rationCardMembers.type}}</h6>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Relation</p>
+                    <h6 class="text-muted f-w-400">{{rationCardMembers.relation}}</h6>
+                  </div>
+                 
+                </div>
+               </div>
+               </div>
+</div>
+</div>
+<div  style="padding-bottom:20px;padding-top:15px;">
+  <button   (click)="click()" class = "btn btn-success" style="margin-left: 40%" (click)="onMenu()" > Update Password</button>
+
+
+
+<form [formGroup]="rationcardForm"  (submit)="onSubmit()">
+
+
+
+
+<div *ngIf="val==true">
+  <div class="form-outline mb-4">
+    <label class="form-label" for="oldPassword"
+    >Old Password</label>
+  <input  type="text" id="oldPassword" class="form-control" required="required"  formControlName="oldPassword"  />
+ </div>
+</div>  
+<div  *ngIf="rationcardForm.controls['oldPassword'].invalid && (rationcardForm.controls['oldPassword'].dirty || rationcardForm.controls['oldPassword'].touched)" class="alert">
+  <div *ngIf="rationcardForm.controls['oldPassword'].errors" style="color: red;">
+  *Please Enter Your Old Password
+</div>
+</div>
+
+<div *ngIf="val==true">
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1q"
+    >New Password</label>
+  <input   type="text" id="form3Example1q" class="form-control" name="patientN"   required="required" formControlName="newPassword"  required />
+</div>
+</div>
+<div  *ngIf="rationcardForm.controls['newPassword'].invalid && (rationcardForm.controls['newPassword'].dirty || rationcardForm.controls['newPassword'].touched)" class="alert">
+<div *ngIf="rationcardForm.controls['newPassword'].errors" style="color: red;">
+*Please Enter Your New Password
+</div>
+</div>
+
+<div [matTooltip]="'*required allField to submit '"
+[matTooltipDisabled]="rationcardForm.valid" *ngIf="val==true">
+<button type="submit" class="btn btn-success btn-lg mb-1"  [disabled]="rationcardForm.invalid" required="required"  >
+  Submit
+</button>
+
+</div>
+
+
+
+</form>
+
+</div>
+</div>
+
+    </div></div>
+    
+    </div>
+    
+
+
+
+                <!-- <div  style="padding-bottom:20px;padding-top:15px;">
+                  <button   (click)="click()" class = "btn btn-primary" style="margin-left: 125%" (click)="onMenu()" > Update Password</button>
+                
+
+                
+                <form [formGroup]="rationcardForm"  (submit)="onSubmit()">
+
+                
+              
+              
+                <div *ngIf="val==true">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="oldPassword"
+                    >Old Password</label>
+                  <input  type="text" id="oldPassword" class="form-control" required="required"  formControlName="oldPassword"  />
+                 </div>
+                </div>  
+                <div  *ngIf="rationcardForm.controls['oldPassword'].invalid && (rationcardForm.controls['oldPassword'].dirty || rationcardForm.controls['oldPassword'].touched)" class="alert">
+                  <div *ngIf="rationcardForm.controls['oldPassword'].errors" style="color: red;">
+                  *Please Enter Your Old Password
+                </div>
+              </div>
+
+                <div *ngIf="val==true">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q"
+                    >New Password</label>
+                  <input   type="text" id="form3Example1q" class="form-control" name="patientN"   required="required" formControlName="newPassword"  required />
+                </div>
+              </div>
+              <div  *ngIf="rationcardForm.controls['newPassword'].invalid && (rationcardForm.controls['newPassword'].dirty || rationcardForm.controls['newPassword'].touched)" class="alert">
+                <div *ngIf="rationcardForm.controls['newPassword'].errors" style="color: red;">
+                *Please Enter Your New Password
+              </div>
+            </div>
+
+              <div [matTooltip]="'*required allField to submit '"
+              [matTooltipDisabled]="rationcardForm.valid" *ngIf="val==true">
+              <button type="submit" class="btn btn-success btn-lg mb-1"  [disabled]="rationcardForm.invalid" required="required"  >
+                  Submit
+              </button>
+
+          </div>
+
+
+
+              </form>
+
+          </div> -->
+
+               

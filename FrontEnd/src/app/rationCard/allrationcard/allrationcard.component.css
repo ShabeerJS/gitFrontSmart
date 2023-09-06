@@ -1,0 +1,12 @@
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .logoutButton{
+    float:right
+  }
+  .forimage{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+  }

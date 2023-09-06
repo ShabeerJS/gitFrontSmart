@@ -1,0 +1,106 @@
+<p>
+    <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+        <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+     <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span style="margin-left: 10px; ">Smartrationing</span>
+    <span class="example-spacer"></span>
+    <div class="Home" style="margin-right:20px">
+      <button mat-button routerLink="/UserSideComponent" >Home</button>
+    </div> 
+    <!-- <div class="RationCard" style="margin-right:20px">
+      <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+    </div>  -->
+    <!-- <div class="Stocks" style="margin-right:20px">
+        <button mat-button routerLink="/AllProductsComponent" >Stocks</button>
+      </div>  -->
+      <div class="OrderProducts" style="margin-right:20px">
+        <button mat-button routerLink="/CheckproductsComponent" >CheckProducts</button>
+      </div> 
+      <div class="Stocks" style="margin-right:20px">
+        <button mat-button routerLink="/CardDetailsComponent" >RationCard</button>
+      </div> 
+      <div class="Orders" style="margin-right:20px">
+        <button mat-button routerLink="/PlaceOrderComponent" >OrderProducts</button>
+      </div> 
+      <button  mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()" matTooltip="User Profile">
+        <mat-menu #menu="matMenu">
+          <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+          <button mat-menu-item (click)="profile()">My Profile</button>
+          <button mat-menu-item (click)=" logOut()">Log Out
+          </button>
+        </mat-menu>
+        <mat-icon>account_circle
+        </mat-icon>
+      </button>
+   
+  </mat-toolbar>
+  </p> 
+
+
+
+
+
+<div *ngIf="orderdetails==null ||orderdetails.length<=0" >
+  <img style="width:40% ;margin-bottom: 5%;margin-left: 30%;" src="https://miraaf.com/assets/images/no_order1.png">
+  <h2>
+    <a routerLink="/CheckproductsComponent" routerLinkActive="active"
+      ><button
+        class="btn btn-primary"
+        style=" margin-left:45%; height: 30%"
+         matBadgePosition="after"
+      >
+        <span class="material-icons">shopping_cart</span> Click To Order Now
+      </button></a
+    >
+  </h2>
+</div>
+
+<div *ngIf="orderdetails.length>0"  >
+<div style="margin-top: 5%" class="container">  <h1 class="forhead" style="font-size:40px;text-align: center;" > Order List 
+</h1>
+
+<table class = "table table-striped table-bordered table-hover">
+<thead class="text-center">
+ 
+ 
+  
+  <tr style="font-size: 20px">
+      <!-- <th>RationCardNo</th> -->
+      <th>Date</th>
+      <th>TotalPrice</th>
+      <th>OrderStatus</th>
+       <th>Actions</th>
+      
+  </tr>
+</thead>
+<tbody>
+  <tr style="font-size: 16px;text-align: center;" *ngFor="let orderDetails of orderdetails" >
+      <!-- <td style="font: size 200px;"> {{ orderDetails.orderId }} </td> -->
+      <!-- <td> {{ orderDetails.rationNo }} </td> -->
+      <td> {{ orderDetails.localDate }} </td>
+      <td> {{ orderDetails.price| currency:'INR' }} </td>
+      <td> {{ orderDetails.orderStatus }} </td>
+      
+        <td>
+         
+            <!-- <button (click) = "updateOrderdetails(orderDetails.orderId)" class = "btn btn-warning" style="margin-left: 10px"> Update</button>  --> 
+          <!-- <button (click) = "deleteFixedProduct(fixedProducts.productId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
+          <button  class = "btn btn-primary"(click) = "openDialogue(orderDetails.fixedProduct)" >orderedProducts</button>
+      
+<!-- <div class="box">
+	<button class = "btn btn-primary"(click)="onView(orderDetails.fixedProduct)" style="margin-left: 10px">orderedProducts</button> 
+  
+</div> -->
+        <!-- </td>  -->
+        
+  </tr>
+  
+</tbody>
+
+</table>
+</div>
+</div>
+<!-- </div>
+</div> -->

@@ -1,0 +1,75 @@
+/* .div1{
+    
+    flex-direction: column;
+} */
+
+.content {
+    padding: 16px;
+  }
+  .body{
+    background-color: #f5eaea;
+  }
+  .content > mat-card {
+    
+    width: 200px;
+  }
+  .card {
+      width: 240px; 
+    height: 220px; 
+     background: #e5e5e5;
+     border: none !important;
+    box-shadow: 15px 20px 20px rgba(121, 129, 122, 0.6),
+                  inset 4px 4px 10px rgb(216, 207, 207); 
+     border-radius: 12px !important; 
+    /* overflow: hidden;
+    justify-content: center; */
+     /* background: #f0ece6;  */
+    /* background-color:whitesmoke; */
+    /* background: -webkit-linear-gradient(to right, #8deafa, #876af1);
+    background: linear-gradient(to right, #89e7f8,  #1d3a2a); */
+    /* min-height: 100vh; */
+  
+  }
+ .card-body:hover{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 10px;
+    transition-delay: 0.2s;
+    
+  } 
+/* .card-body:hover{
+  opacity: 1;
+  transition-delay: 0.3s;
+} */
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: rgb(16, 104, 235);
+}
+.button:hover{
+  visibility: visible;
+  opacity: 1;
+  margin-top: 10px;
+  transition-delay: 0.2s;
+}
+.but{
+  visibility: visible;
+  opacity: 1;
+  margin-top: 10px;
+  transition-delay: 0.2s;
+}
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .logoutButton{
+    float:right
+  }
+  .forimage{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+  }
+  

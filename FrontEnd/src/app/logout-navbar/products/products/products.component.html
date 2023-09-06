@@ -1,0 +1,52 @@
+
+<h1 style="color:black; font-weight: bold; font-size: 25px;">Add Product</h1>
+<div class="d-flex flex-row justify-content-center"  style="width: 400px;">
+    <!-- [hidden]="submitted" -->
+  <form  [formGroup]="addProduct">
+    <div>
+      <mat-form-field class="full-width" appearance="outline">
+          <mat-label>productName</mat-label>
+          <input formControlName="productName" matInput [type]="'productName'"  required />
+          <mat-error *ngIf="!addProduct.controls['productName'].valid">
+            productName is required
+          </mat-error>
+      </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>productQuantity</mat-label>
+        <input formControlName="educationInfo" matInput [type]="'number'" required />
+        <mat-error > 
+          <!-- *ngIf="!addForm.controls['educationInfo'].valid" -->
+          productQuantity is required
+        </mat-error>
+    </mat-form-field>
+</div>
+
+<div>
+  <mat-form-field class="full-width" appearance="outline">
+      <mat-label>productPrice</mat-label>
+      <input formControlName="productPrice" matInput [type]="'number'" required />
+      <mat-error *ngIf="!addProduct.controls['number'].valid">
+        productPrice is required
+      </mat-error>
+  </mat-form-field>
+</div>
+
+<!-- <div>
+  <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" matInput [type]="'password'" required />
+      <mat-error *ngIf="!addProduct.controls['password'].valid">
+        password is required
+      </mat-error>
+  </mat-form-field>
+</div> -->
+<div class= "d-flex flex-row p-3 justify-content-auto">
+    <button type="submit" class="btn btn-success mr-2" (click)="onSubmit()">Submit</button>
+    <button  class="btn btn-success ml-2" (click)="addProduct.reset()">Cancel</button>
+    </div>
+  </form>
+</div> 
+

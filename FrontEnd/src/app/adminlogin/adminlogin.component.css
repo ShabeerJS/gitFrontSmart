@@ -1,0 +1,241 @@
+/* @import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* zocial */
+/*new [class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+} */
+
+/*================================================================
+/* h2 {
+    
+  color:rgba(250, 36, 36, 0.8);
+  margin-left:12px;
+} */
+
+/* body {
+    position: relative;
+   margin-top: -50px;
+  background-color: black ;
+  background-size: auto;
+  font-family: 'Roboto', sans-serif;
+  
+} */
+
+/* form {
+  position:relative;
+  margin: 50px auto;
+  padding-top: 200px;
+  width: 380px;
+  height: auto;
+  text-align: center;
+}======================================================================================= */
+
+/* input {
+  padding: 16px;
+  border-radius:7px;
+  border:0px; */
+  /*================================================================
+  /* background: rgba(14, 6, 0, 0.836); */
+  /* background:  #969656; 
+  ======================================================================================= */
+  /* display: block;
+  margin: 15px;
+  width: 300px;  
+  color:rgb(235, 18, 18);
+  font-size:18px;
+  height: 54px;
+  background: #ffd89b;
+  background: -webkit-linear-gradient(to right, #8deafa, #876af1);
+  background: linear-gradient(to right, #89e7f8,  #876af1);
+} */
+
+/* input:focus {
+  outline-color: rgba(0,0,0,0);
+  background: rgba(22, 21, 21, 0.95);
+  color: #e74c3c;
+}
+
+button {
+ 
+  height: 50px;
+  width: 121px;
+  border: 0px;
+  background: #020200;
+  border-radius:7px;
+  padding: 10px;
+  /* color:white; */
+  /* font-size:22px;
+   background: #ffd89b;
+    background: -webkit-linear-gradient(to right, #8deafa, #876af1);
+    background: linear-gradient(to right, #89e7f8,  #876af1);
+    
+}
+
+.inputUserIcon {
+  position:absolute;
+  top:280px;
+  left: 59%;
+  color:white;
+}
+
+.inputPassIcon {
+  position:absolute;
+  top:350px;
+  left: 59%;
+  color:white;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #e74c3c;
+}
+
+.div-wrapper {
+    height: 210px;
+    width: 400px;
+    margin-top: 250px;
+    margin-left: 35%;
+    border: 2px dashed rgb(230, 75, 75);
+    border-radius: 1px;
+   
+} */
+
+
+/* .div-to-align {
+    width: 75%;
+    padding: 400px 20px;
+ 
+
+}
+.loginbtn{
+
+margin-left: 30%;
+}
+body {
+    background: #ffd89b;
+    background: -webkit-linear-gradient(to right, #8deafa, #876af1);
+    background: linear-gradient(to right, #89e7f8,  #876af1);
+    min-height: 100vh;
+    min-width: 100vh;
+  }   */
+
+  @import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+   -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+
+h2 {
+    
+  color:rgba(250, 36, 36, 0.8);
+  margin-left:12px;
+}
+
+body {
+    position: relative;
+   margin-top: -20px;
+   /*  */
+  background-color: #E0E0E0;
+  
+  font-family: 'Roboto', sans-serif;
+  height: 91.3%;
+ 
+}
+
+form {
+  position:relative;
+  margin: 50px auto;
+  padding-top: 200px;
+  width: 360px;
+  height: auto;
+  text-align: center;
+}
+
+input {
+  padding: 16px;
+  border-radius:7px;
+  border:0px;
+  background: rgba(14, 6, 0, 0.836);
+  display: block;
+  margin: 15px;
+  width: 300px;  
+  color:rgb(235, 18, 18);
+  font-size:18px;
+  height: 54px;
+}
+
+input:focus {
+  outline-color: rgba(0,0,0,0);
+  background: rgba(22, 21, 21, 0.95);
+  color: #e74c3c;
+}
+
+button {
+ 
+  height: 50px;
+  width: 121px;
+  border: 0px;
+  background: #0e0d0d;
+  border-radius:7px;
+  padding: 10px;
+  color:white;
+  font-size:22px;
+}
+
+.inputUserIcon {
+  position:absolute;
+  top:230px;
+  right: 80px;
+  color:white;
+}
+
+.inputPassIcon {
+  position:absolute;
+  top:300px;
+  right: 80px;
+  color:white;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #e74c3c;
+}
+
+
+small.ale{
+  margin-bottom: 50%;
+  /* margin-bottom: -18px; */
+}
+div.alert{
+  margin-top: -28px;
+  margin-bottom: -18px;
+}
+.login{
+  margin-top: -2%;
+}

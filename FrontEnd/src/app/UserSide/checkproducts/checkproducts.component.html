@@ -1,0 +1,206 @@
+<!-- <div class="card border border-success shadow-0 mb-3" style="max-width: 18rem">
+  <div class="card-header bg-transparent border-success">Products</div>
+  <div class="card-body text-success" *ngFor="let fixed of fixedProducts">
+    <h4>{{ fixed.productName }}</h4>
+    <h4>{{ fixed.productQuantity }}</h4>
+    <h4>{{ fixed.productPrice | currency : "INR" }}</h4>
+
+    <!-- <h1> </h1>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+<!-- </div>
+  <div class="card-footer bg-transparent border-success">
+    <button type="button" name="item-1-button" id="item-1-button" disabled>
+      Add to Cart
+    </button>
+  </div>
+</div> -->
+
+<!-- <app-logout-navbar></app-logout-navbar> -->
+<!-- <div *ngFor="let fixed of fixedProducts">
+    <div class="card border border-success shadow-0 mb-3" style="max-width: 18rem">
+  <div class="card-header bg-transparent border-success">Products</div>
+  <div class="card-body text-success" >
+    <h4>{{ fixed.productName }}</h4>
+    <h4>{{ fixed.productQuantity }}</h4>
+    <h4>{{ fixed.productPrice | currency : "INR" }}</h4>
+
+    <button type="button" name="item-1-button" id="item-1-button">
+      Add to Cart
+    </button>
+  </div>
+</div>
+</div> -->
+
+<!-- <div class="div1"  *ngFor="let fixed of fixedProducts">
+<div class="card border border-success shadow-0 mb-1" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-success">Products</div>
+    <div class="card-body text-success">
+        <h4>name: {{ fixed.productName }}</h4>
+        <h4>Quantity: {{ fixed.productQuantity }}</h4>
+        <h4>Price: {{ fixed.productPrice | currency : "INR" }}</h4>
+        <h4>CardType: {{ fixed.cardType  }}</h4>
+    </div>
+    <div class="card-footer bg-transparent border-success">
+        <button mat-button color="primary" type="button" name="item-1-button" id="item-1-button" (click)="addToCart(fixed)" >Add to Cart</button></div>
+  </div>
+</div> -->
+
+<!-- <app-logout-navbar></app-logout-navbar>
+<h2>
+  <a routerLink="/UserSideComponent" routerLinkActive="active"
+    ><button class="btn btn-primary" style="margin-left: 1290px; width: 5%">
+      Back
+    </button></a
+  >
+</h2> -->
+<!-- <div class="car">
+<div class="container-fluid"> 
+     <div class="flex-column"> 
+     <div fxLayout="col" fxLayoutGap="16px grid"> 
+       <div   fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let fixed of fixedProducts">
+        <mat-card class="margin-bottom" >
+          <mat-card-header>
+            <mat-card-title> {{ fixed.productName }}</mat-card-title>
+          </mat-card-header>  -->
+<!-- <img mat-card-image src="./../assets/images/mountains.jpg">  -->
+<!-- <mat-card-content>
+            <p>
+                Quantity: {{ fixed.productQuantity }}
+                <br>
+                Price: {{ fixed.productPrice | currency : "INR" }}
+                <br>
+                CardType: {{ fixed.cardType  }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" type="button" name="item-1-button" id="item-1-button" (click)="addToCart(fixed)" >Add to Cart</button>  -->
+<!-- <button mat-button style="color: rgb(16, 19, 19);">Details</button> -->
+<!-- <button mat-button>SHARE</button> -->
+<!-- </mat-card-actions>
+        </mat-card><br>
+      </div>
+      <h2><a routerLink="/PlaceOrderComponent" routerLinkActive="active"><button class = "btn btn-primary" style="" >Go To Cart</button></a></h2>
+    </div>
+</div> 
+     -->
+<!-- <div class="ui grid" >
+        <div class="four wide column" *ngFor="let fixed of fixedProducts"> -->
+<!-- <div class="column" > -->
+<!-- <div class="card">
+        <h3>{{ fixed.productName }}</h3>
+        <p> Quantity: {{ fixed.productQuantity }}</p>
+        <p> Price: {{ fixed.productPrice | currency : "INR" }}</p>
+        <p> CardType: {{ fixed.cardType  }}</p>
+        <p> <button mat-button color="primary" type="button" name="item-1-button" id="item-1-button" (click)="addToCart(fixed)" >Add to Cart</button></p>
+      </div> 
+      </div>
+      </div>
+    
+      <h2><a routerLink="/PlaceOrderComponent" routerLinkActive="active"><button class = "btn btn-primary" style="" >Go To Cart</button></a></h2> -->
+
+      <p>
+        <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+            <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+         <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button> -->
+        <span style="margin-left: 10px; ">Smartrationing</span>
+        <span class="example-spacer"></span>
+        <div class="Home" style="margin-right:20px">
+          <button mat-button routerLink="/UserSideComponent" >Home</button>
+        </div> 
+        <!-- <div class="RationCard" style="margin-right:20px">
+          <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+        </div>  -->
+        <div class="Stocks" style="margin-right:20px">
+            <button mat-button routerLink="/CardDetailsComponent" >RationCard</button>
+          </div>  
+          <!-- <div class="OrderProducts" style="margin-right:20px">
+            <button mat-button routerLink="/CheckproductsComponent" >OrderProducts</button>
+          </div>  -->
+          <div class="Orders" style="margin-right:20px">
+            <button mat-button routerLink="/PlaceOrderComponent" >OrderProducts</button>
+          </div> 
+
+          <div class="Orders" style="margin-right:20px">
+            <button mat-button routerLink="/MyorderDetailsComponent" >MyOrders</button>
+          </div> 
+          <button  mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()" matTooltip="User Profile">
+            <mat-menu #menu="matMenu">
+              <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+              <button mat-menu-item (click)="profile()">My Profile</button>
+              <button mat-menu-item (click)=" logOut()">Log Out
+              </button>
+            </mat-menu>
+            <mat-icon>account_circle
+            </mat-icon>
+          </button>
+       
+      </mat-toolbar>
+      </p> <br><br><br>
+      
+      
+      
+
+
+
+
+<div class="container">
+  <div class="ui grid">
+    <div  class="product" class="four wide column" *ngFor="let fixed of fixedProducts index as i" >
+      <div>
+        <div class="card">
+          <div class="card-body">
+            <h5
+              class="card-title"
+              style="font-weight: bolder; font-size: 25px; text-align: center"
+            >
+              {{ fixed.productName }}
+            </h5>
+            <br />
+            <p class="card-text" style="font-size: 19px">
+              Quantity: {{ fixed.productQuantity }} Kg
+            </p>
+            <p class="card-text" style="font-size: 19px">
+              Price: {{ fixed.productPrice | currency : "INR" }}/kg
+            </p>
+            <!-- <div *ngIf="message!=''">
+              <p style="color: red;">{{message}}</p>
+            </div> -->
+
+           
+            <!--  [disabled]="cartProductList.includes(fixed)" <p> <button mat-button color="primary" type="button" name="item-1-button" id="item-1-button" (click)="addToCart(fixed)" >Add to Cart</button></p> -->
+            <button class="button"
+              type="button"
+              class="btn btn-success"
+              name="item-1-button"
+              id="item-1-button"
+              [ngClass]="{ 'red': cartProductList.includes(fixed)}"
+              
+              (click)="addToCart(fixed)"
+              style="width: 60%"
+              
+            >
+              <span class="material-icons">add_shopping_cart</span> Add to order
+            </button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <h2>
+        <a routerLink="/PlaceOrderComponent" routerLinkActive="active"
+          ><button class="but"
+            class="btn btn-primary"
+            style="margin-top: 100%; width: 150%; height: 30%"
+            matBadge="{{cartProductList.length}}" matBadgePosition="after"
+          >
+            <span class="material-icons">shopping_cart</span> Go To Order
+          </button></a
+        >
+      </h2>
+    </div>
+  </div>
+
+
+       
+

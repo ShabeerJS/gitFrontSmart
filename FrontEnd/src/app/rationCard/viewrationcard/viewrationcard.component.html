@@ -1,0 +1,78 @@
+ <!-- <app-logout-navbar></app-logout-navbar>  -->
+
+
+ <p>
+  <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+      <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+   <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span style="margin-left: 10px; ">Smartrationing</span>
+  <span class="example-spacer"></span>
+  <div class="Home" style="margin-right:20px">
+    <button mat-button routerLink="/AdminsideComponent" >Home</button>
+  </div> 
+  <div class="RationCard" style="margin-right:20px">
+    <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+  </div> 
+  <div class="Stocks" style="margin-right:20px">
+      <button mat-button routerLink="/AllProductsComponent" >Stocks</button>
+    </div> 
+    <div class="FixedProducts" style="margin-right:20px">
+      <button mat-button routerLink="/AllfixedproductsComponent" >FixedProducts</button>
+    </div> 
+    <div class="Orders" style="margin-right:20px">
+      <button mat-button routerLink="/AllorderdetailsComponent" >Orders</button>
+    </div> 
+  <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+      <mat-menu #menu="matMenu">
+        <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+        <!-- <button mat-menu-item >My Profile</button> -->
+        <button mat-menu-item  routerLink="/" >Log Out
+        </button>
+      </mat-menu>
+      <mat-icon>power_settings_new
+      </mat-icon>
+    </button>
+ 
+</mat-toolbar>
+</p>  
+    
+
+
+
+
+
+
+
+ <!-- <h2><a routerLink="/AllrationcardComponent" routerLinkActive="active"><button class = "btn btn-primary" style="margin-left: 1260px; width: 5%;" >Back</button></a></h2> -->
+<div class="card" style="width: 25rem;margin-left:40%; margin-top:0%;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJf3t2klrSfsxJOt_D6MmBuRaM0DV-viX0w&usqp=CAU" class="card-img-top" alt="Chicago Skyscrapers"/>
+    <div class="card border border-success shadow-0 mb-3" style="max-width: 25rem;">
+        <div class="card-header bg-transparent border-success text-success"><strong style="margin-left: 38%; font-size:18px; ">RationCard</strong>
+            <div style="margin-left:2%;" ><label><b>RationCardNo :</b></label> {{rationCard.rationCardNo}}</div>
+            <div style="margin-left:2%;"><label><b>CardType :</b></label> {{rationCard.type}}</div>
+        </div>
+        <div class="card-body text-success">
+          <h3 class="card-title"><strong style="margin-left: 40%;font-size:18px;">Members</strong></h3>
+          <div class="card-text" style="margin-left:2%;" *ngFor="let member of rationCard.rationCardMembers">
+            <div><b>Name :</b> {{member.memberName}}</div>
+            <div><b>Age :</b> {{member.age}}</div>
+            <div><b>Gender :</b> {{member.type}}</div>
+            <div><b>Relation :</b> {{member.relation}}</div>
+            <hr>
+          </div>
+        </div>
+        <div class="card-footer text-success border-success"><strong style="margin-left: 40%;font-size:18px;">Address</strong></div>
+        <div class="card-text text-success" style="margin-left:4%;" >
+            
+        
+            <div><b>AddressLine :</b> {{rationCard.addresses.addressLine1}}</div>
+            <div><b>Area : </b> {{rationCard.addresses.area}}</div>
+            <div><b>City : </b> {{rationCard.addresses.city}}</div>
+            <div><b>Pincode : </b> {{rationCard.addresses.pincode}}</div>
+            <!-- <div><label><b>gender:</b></label>{{member.type}}</div>
+            <div><label><b>relation:</b></label>{{member.relation}}</div> -->
+          </div>
+      </div>
+  </div>

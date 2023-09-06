@@ -1,0 +1,123 @@
+<!-- <app-logout-navbar></app-logout-navbar> -->
+
+
+<p>
+  <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+      <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px , " alt="logo" />
+   <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span style="margin-left: 10px; ">Smartrationing</span>
+  <span class="example-spacer"></span>
+  
+  <button  mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenu()" matTooltip="User Profile">
+    <mat-menu #menu="matMenu">
+      <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+      <button mat-menu-item (click)="profile()">My Profile</button>
+      <button mat-menu-item (click)=" logOut()">Log Out
+      </button>
+    </mat-menu>
+    <mat-icon>account_circle
+    </mat-icon>
+  </button>
+  <!-- <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+      <mat-menu #menu="matMenu"> -->
+        <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+        <!-- <button mat-menu-item >My Profile</button> -->
+        <!-- <button mat-menu-item    (click)="logOut()">Log Out
+        </button>
+      </mat-menu>
+      <mat-icon>power_settings_new
+      </mat-icon>
+    </button> -->
+ 
+ 
+ 
+ 
+
+</mat-toolbar>
+</p>
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+
+<div class="card" style="width: 16rem; margin-top:-2% ; margin-left:40%" matTooltip="To know about User details">
+    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJf3t2klrSfsxJOt_D6MmBuRaM0DV-viX0w&usqp=CAU" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title">Ration CardDetails</h1>
+      <!-- <p class="card-text">You can Add your rationCard</p> -->
+      <a routerLink="/CardDetailsComponent" routerLinkActive="active" class="btn btn-success">RationCard</a>
+    </div>
+  </div>
+      </div>
+      
+      <div class="col-sm-4">
+  <div class="card " style="width: 16rem;  margin-top:-2%;  margin-left:59%" matTooltip="Add your products to order here">
+    <img class="card-img-top" src="../../assets/images/240_F_107268121_96xjI1BgHOCzhDVbJ4IW5Y2qhIBY6pE6.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title"  >Check products</h1>
+      <!-- <p class="card-text">Stock Details</p> -->
+      <a routerLink="/CheckproductsComponent" routerLinkActive="active" class="btn btn-success" style="margin-top:-6%">Checkproducts</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>  
+<div class="container">
+    <div class="row">
+<div class="col-sm-4">
+  <div class="card" style="width:16rem; margin-left:40%; margin-top:5%" matTooltip="Place your Order">
+    <img class="card-img-top" src="../../assets/images/top-view-raw-rice-inside-bag-plate-grey-surface_140725-90597.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title">Order Products</h1>
+      <!-- <p class="card-text">You can Add your Fixed Products</p> -->
+      <a routerLink="/PlaceOrderComponent" routerLinkActive="active" class="btn btn-success m-1" style="margin-top:-6%">OrderProducts</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4">
+  <div class="card" style="width:16rem; margin-left:59%; margin-top:5%" matTooltip="Check Your Orders">
+    <img class="card-img-top" class="ii" src="data:image/png;base64,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" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title">My Orders</h1>
+      <!-- <p class="card-text">You can Add your Fixed Products</p> -->
+      <a routerLink="/MyorderDetailsComponent" routerLinkActive="active" class="btn btn-success m-1" style="margin-top:-6%">Orders</a>
+    </div>
+  </div>
+  </div>
+
+</div>
+</div>
+<!-- 
+<div class="container">
+  <div class="row">
+
+
+</div>
+</div> -->
+  
+    
+
+
+
+<!-- <div class="col-sm-4">
+    <div class="card" style="width:16rem; margin-left:59%; margin-top:5%">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJf3t2klrSfsxJOt_D6MmBuRaM0DV-viX0w&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h1 class="card-title">Order Details</h1>
+    
+        <a routerLink="/AllorderdetailsComponent" routerLinkActive="active" class="btn btn-success">Order details</a>
+      </div>
+    </div>
+  </div> -->
+
+    <!-- <p class="card-text">view Order Order</p> -->

@@ -1,0 +1,38 @@
+<body>
+
+    <table class = "table table-striped table-bordered table-hover">
+        <thead class="text-center">
+         
+         
+          
+          <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <!-- <th>orderStatus</th> -->
+             
+              
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="font-size: 18px" *ngFor="let orderDetails of fixedProds" >
+              <!-- <td style="font: size 200px;"> {{ orderDetails.orderId }} </td> -->
+              <td> {{ orderDetails.productName }} </td>
+              <td> {{ orderDetails.productPrice | currency:'INR' }}/kg </td>
+              <td> {{ orderDetails.productQuantity }} Kg </td>
+             
+                
+          </tr>
+          
+        </tbody>
+        <mat-dialog-actions>
+          <button style="margin-left:130%" class="btn btn-primary" mat-dialog-close>Cancel</button>
+         
+         
+        </mat-dialog-actions>
+        </table>
+
+
+
+
+</body>

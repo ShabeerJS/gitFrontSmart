@@ -1,0 +1,215 @@
+
+<!--<p style="color: black">DashBoard1Working</p>-->
+<!--have to import matInput -->
+<!-- <mat-form-field appearance="fill" style="margin-left: 40%;margin-top:20%">
+   
+    <mat-label>Input</mat-label>
+    <input matInput placeholder="Enter the name" required >
+  </mat-form-field><br>
+  
+  <mat-form-field appearance="fill" style="margin-left: 40%;margin-top:00%">
+   
+    <mat-label>Input</mat-label>
+    <input type="password" matInput placeholder="Enter the password" required >
+  </mat-form-field><br>
+  <mat-form-field style="margin-left: 40%">
+    <mat-select aria-placeholder="select">
+        <mat-option value="option">1</mat-option>
+        <mat-option value="option">2</mat-option>
+        <mat-option value="option">3</mat-option>
+    </mat-select>
+</mat-form-field><br>
+  <mat-radio-button style="margin-left: 40%">male</mat-radio-button> <mat-radio-button style="margin-left: %">female</mat-radio-button>
+ <a routerLink="../two"> <button style="margin-left: 45%" mat-raised-button class="loginButton">Login</button></a>
+
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field> --> 
+  <!-- <p>THis is <span style="border-color: red">working</span></p>
+<p>New Componenet-Child</p>
+<p>Child-Employee</p>
+<app-first></app-first>  -->
+
+
+
+
+
+<!-- <h1 style="color:rgb(221, 213, 213); font-weight: bold; font-size: 25px;">Add Products</h1> -->
+<!-- <app-logout-navbar></app-logout-navbar>  -->
+
+
+
+
+
+<p>
+  <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+      <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+   <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span style="margin-left: 10px; ">Smartrationing</span>
+  <span class="example-spacer"></span>
+  <div class="Home" style="margin-right:20px">
+    <button mat-button routerLink="/AdminsideComponent" >Home</button>
+  </div> 
+  <div class="RationCard" style="margin-right:20px">
+    <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+  </div> 
+   <div class="Stocks" style="margin-right:20px">
+      <button mat-button routerLink="/AllProductsComponent" >Stocks</button>
+    </div>  
+    <div class="FixedProducts" style="margin-right:20px">
+      <button mat-button routerLink="/AllfixedproductsComponent" >FixedProducts</button>
+    </div> 
+    <div class="Orders" style="margin-right:20px">
+      <button mat-button routerLink="/AllorderdetailsComponent" >Orders</button>
+    </div> 
+  <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+      <mat-menu #menu="matMenu">
+        <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+        <!-- <button mat-menu-item >My Profile</button> -->
+        <button mat-menu-item  routerLink="/AdminLoginComponent" >Log Out
+        </button>
+      </mat-menu>
+      <mat-icon>power_settings_new
+      </mat-icon>
+    </button>
+ 
+</mat-toolbar>
+</p> 
+
+
+
+
+
+
+
+
+    <!-- <h1 style="color:rgb(221, 213, 213); font-weight: bold; font-size: 25px;">Add Products</h1> -->
+    <div class="d-flex flex-row justify-content-center container" [hidden]="submitted" style="width: 400px;">
+      <div class="row">
+        <div  style="padding: 50px  1px;"><h1 style="color: rgb(36, 33, 33) ;font-size: 40px; margin-right: 15%">Add Stocks</h1>
+      <form class="form" [formGroup]="addProductForm">
+        <div>
+            <!-- appearance="outline" -->
+          <mat-form-field class="full-width" >
+              <mat-label>productName</mat-label>
+              <input formControlName="productName" (keypress)="OnlyLettersAllowed($event)" matInput [type]="'productName'" required />
+              <mat-error *ngIf="!addProductForm.controls['productName'].valid">
+                productName is required
+              </mat-error>
+          </mat-form-field>
+      </div>
+    
+      <div>
+        <mat-form-field class="full-width"  >
+            <mat-label>productQuantity</mat-label>
+            <input formControlName="quantity"  (keypress)="OnlyNumbersAllowed($event)" matInput [type]="'number'" required />
+            
+            <mat-error > 
+              <!-- *ngIf="!addForm.controls['educationInfo'].valid" -->
+              productQuantity is required
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <!-- appearance="outline" -->
+      <mat-form-field class="full-width" >
+          <mat-label>productPrice</mat-label>
+          <input formControlName="productPrice" (keypress)="OnlyNumbersAllowed($event)" matInput [type]="'number'" required />
+          <mat-error> 
+            <!-- *ngIf="!addForm.controls['educationInfo'].valid" -->
+            productPrice is required
+          </mat-error>
+      </mat-form-field>
+    </div>
+    
+    
+    
+    
+    <div class= "d-flex flex-row p-3 justify-content-auto">
+      <div [matTooltip]="'*required allField to submit '"
+      [matTooltipDisabled]="addProductForm.valid">
+        <button type="submit" class="btn btn-success" [disabled]="addProductForm.invalid" style="margin-left:30px;" (click)="onSubmit()">Submit</button>
+        </div>
+        <div ></div>
+         <button  class="btn btn-warning ml-3 btn-space" (click)="addProductForm.reset()">Cancel</button>
+         <div></div>
+         <!-- <button class="btn btn-primary ml-3 btn-space" (click) = "goback()"   style="width: 40%;"> back</button> -->
+     
+        </div>
+      </form>
+      
+    </div>
+    </div>
+  
+  
+     <!-- <body>
+        <div class="container " >
+    <div class="d-flex flex-row justify-content-center container " [hidden]="submitted" style="width: 40px ;height: 10px;">
+        <div class="row">
+            <div class="panel border ">
+          
+            <div class="panel-heading">
+                <h3 class="pt-6 font-weight-bold " style="color: white">Add FixedProducts</h3>
+            </div>
+       <form class="form" [formGroup]="addFixedProductForm">
+          <div>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>FixedProductName</mat-label>
+                <input formControlName="productName" matInput [type]="'productName'" required />
+                <mat-error *ngIf="!addFixedProductForm.controls['productName'].valid">
+                    FixedProductName is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+      
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+              <mat-label>FixedProductQuantity</mat-label>
+              <input formControlName="productQuantity" matInput [type]="'number'" required />
+              <mat-error > 
+                
+                FixedProductQuantity is required
+              </mat-error>
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>FixedProductPrice</mat-label>
+            <input formControlName="productQuantity" matInput [type]="'number'" required />
+            <mat-error > 
+             
+              FixedProductPrice is required
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width" appearance="outline">
+        <mat-select class="color" formControlName="cardType" aria-placeholder="select" placeholder="CardType" required>
+       
+            <mat-option value="option" >NPHH</mat-option>
+            <mat-option value="option">PHH</mat-option>
+           
+        </mat-select>
+    </mat-form-field>
+      </div>
+       <div class= "d-flex flex-row p-3 justify-content-auto">
+          <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+          <div ></div>
+           <button  class="btn btn-warning ml-3 btn-space" (click)="addFixedProductForm.reset()">Cancel</button>
+          </div>
+        </form>
+      </div> 
+      </div>
+      </div>
+    </div>
+    
+      </body> -->
+
+
+      <!-- <div  style="padding: 80px  1px;"><h1 style="color: white">Add FixedProducts</h1> -->

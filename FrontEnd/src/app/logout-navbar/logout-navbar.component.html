@@ -1,0 +1,29 @@
+<!-- <p>logout-navbar works!</p> -->
+
+<p>
+    <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+        <img src="../../assets/images/download.jpg" style="margin-bottom: 9px , " alt="logo" />
+     <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span style="margin-left: 10px; ">Smartrationing</span>
+    <span class="example-spacer"></span>
+    
+    <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+        <mat-menu #menu="matMenu">
+          <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+          <!-- <button mat-menu-item >My Profile</button> -->
+          <button mat-menu-item  routerLink="/" >Log Out
+          </button>
+        </mat-menu>
+        <mat-icon>power_settings_new
+        </mat-icon>
+      </button>
+   
+   
+   
+   
+
+  </mat-toolbar>
+  </p>
+

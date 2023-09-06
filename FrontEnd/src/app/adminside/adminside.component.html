@@ -1,0 +1,138 @@
+<!-- <p>adminside works!</p> -->
+  <!-- <app-logout-navbar></app-logout-navbar>  -->
+
+  
+<p>
+  <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+      <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+   <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span style="margin-left: 10px; ">Smartrationing</span>
+  <span class="example-spacer"></span>
+  <!-- <div class="booking" style="margin-right:20px">
+    <button mat-button routerLink="/booking" >Home</button>
+  </div> 
+  <div class="booking" style="margin-right:20px">
+    <button mat-button routerLink="/booking" >RationCard</button>
+  </div> 
+  <div class="car">
+      <button mat-button routerLink="/addcar" >Stocks</button>
+    </div> 
+    <div class="address">
+      <button mat-button routerLink="/address" >FixedProducts</button>
+    </div> 
+    <div class="address">
+      <button mat-button routerLink="/address" >Orders</button>
+    </div>  -->
+  <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+      <mat-menu #menu="matMenu">
+        <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+        <!-- <button mat-menu-item >My Profile</button> -->
+        <button mat-menu-item  (click)="logOut()" >Log Out
+        </button>
+      </mat-menu>
+      <mat-icon>power_settings_new
+      </mat-icon>
+    </button>
+ 
+ 
+ 
+ 
+
+</mat-toolbar>
+</p>
+
+
+ <!-- <mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-drawer #drawer [mode]="'side'" class="drawer-content" opened style="width:190px">
+      <div class="nav flex-column nav-pills side" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a *ngIf="isAdmine" class="nav-link active side" id="v-pills-home-tab " data-toggle="pill" routerLink="/rationCardComponent"
+          role="tab" aria-controls="v-pills-home" aria-selected="true">RationCard</a>
+        <a *ngIf="isAdmine" class="nav-link side" id="v-pills-profile-tab " data-toggle="pill" routerLink="/AllProductsComponent"
+          role="tab" aria-controls="v-pills-profile" aria-selected="false">Stocks</a>
+        <a *ngIf="isAdmine" class="nav-link side" id="v-pills-messages-tab " data-toggle="pill" routerLink="/subject"
+          role="tab" aria-controls="v-pills-messages" aria-selected="false">FixedProduct</a>
+        <a *ngIf="isAdmine" class="nav-link side" id="v-pills-settings-tab " data-toggle="pill" routerLink="/subscription"
+          role="tab" aria-controls="v-pills-settings" aria-selected="false">OrderDetails</a>
+        <!-- <a *ngIf="!isAdmine" class="nav-link side" id="v-pills-settings-tab " data-toggle="pill"
+          routerLink="/mysubscription" role="tab" aria-controls="v-pills-settings"
+          aria-selected="false">MySubscription</a> -->
+        <!-- <a *ngIf="!isAdmine" class="nav-link side" id="v-pills-settings-tab " data-toggle="pill"
+          routerLink="/createsubscription" role="tab" aria-controls="v-pills-settings" aria-selected="false">New
+          Subscribe</a> -->
+      <!-- </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container> --> 
+
+
+<!-- <mat-sidenav-container>
+    <mat-sidenav  mode="side" opened>
+        <mat-nav-list  style="width: 200px;">
+            <a mat-list-item  routerLink="" style="height: 60px;">products</a>
+            <a mat-list-item  routerLink="/AllProductsComponent" style="height: 60px;">products</a>
+            <a mat-list-item  routerLink="/AllProductsComponent" style="height: 60px;">products</a>
+            <a mat-list-item  routerLink="/AllProductsComponent" style="height: 60px;">products</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <p style="height: 88vh"></p>
+        </mat-sidenav-content>
+  </mat-sidenav-container> -->
+<!-- <body class="overall"> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+
+<div class="card" style="width: 16rem; margin-top:-2% ; margin-left:40%" matTooltip="Ration Cards Lists">
+    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJf3t2klrSfsxJOt_D6MmBuRaM0DV-viX0w&usqp=CAU" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title">Ration Card</h1>
+      <!-- <p class="card-text">You can Add your rationCard</p> -->
+      <a routerLink="/AllrationcardComponent" routerLinkActive="active" class="btn btn-success">RationCard</a>
+    </div>
+  </div>
+      </div>
+      
+      <div class="col-sm-4">
+  <div class="card " style="width: 16rem;  margin-top:-2%;  margin-left:59%" matTooltip="Check Your Stocks">
+    <img class="card-img-top" src="../../assets/images/240_F_107268121_96xjI1BgHOCzhDVbJ4IW5Y2qhIBY6pE6.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title"  >Stocks</h1>
+      <!-- <p class="card-text">Stock Details</p> -->
+      <a routerLink="/AllProductsComponent" routerLinkActive="active" class="btn btn-success" style="margin-top:-6%">Stocks</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>  
+<div class="container">
+    <div class="row">
+<div class="col-sm-4">
+  <div class="card" style="width:16rem; margin-left:40%; margin-top:5%" matTooltip="Check Your FixedProducts">
+    <img class="card-img-top" src="../../assets/images/top-view-raw-rice-inside-bag-plate-grey-surface_140725-90597.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title">Fixed Products</h1>
+      <!-- <p class="card-text">You can Add your Fixed Products</p> -->
+      <a routerLink="/AllfixedproductsComponent" routerLinkActive="active" class="btn btn-success m-1" style="margin-top:-6%">FixedProduct</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+    <div class="card" style="width:16rem; margin-left:59%; margin-top:5%" matTooltip="All Order Details">
+      <img class="card-img-top" src="../../assets/images/Capture1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h1 class="card-title">Order Details</h1>
+        <!-- <p class="card-text">view Order Order</p> -->
+        <a routerLink="/AllorderdetailsComponent" routerLinkActive="active" class="btn btn-success">Order details</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    
+<!-- </body> -->

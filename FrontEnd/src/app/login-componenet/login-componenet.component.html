@@ -1,0 +1,60 @@
+<head>
+  
+</head>
+<body>
+  <!-- <app-logout-navbar></app-logout-navbar> -->
+ <app-navbar></app-navbar>
+  <form class="login" [formGroup]="UserLoginForm"  autocomplete="off">
+    
+    <!-- <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Login</h2> -->
+   
+    <!-- <span class="entypo-user inputUserIcon">
+       <i class="fa fa-user"></i>
+     </span> -->
+     <h1 style="font-weight: bold;font-size: 40px;margin-right: 30px;">User</h1>
+     <!-- <p> -->
+      
+    <input type="number"  formControlName="rationCardNo" class="user" placeholder="CardNumber" required/>
+    <!-- <mat-error *ngIf="!UserLoginForm.controls['rationCardNo'].valid">
+        Username is required
+      </mat-error> -->
+    <!-- <span class="entypo-key inputPassIcon">
+       <i class="fa fa-key"></i>
+     </span> -->
+     <div  *ngIf="UserLoginForm.controls['rationCardNo'].invalid && (UserLoginForm.controls['rationCardNo'].dirty || UserLoginForm.controls['rationCardNo'].touched)" class="alert">
+      <div *ngIf="UserLoginForm.controls['rationCardNo'].errors" style="color: red;">
+      * Enter Your 10 Digit Card Number
+    </div>
+    <!-- <div *ngIf="UserLoginForm.controls['rationCardNo'] style="color: red;"></div> -->
+  </div>
+     <!-- <small *ngIf=" UserLoginForm.controls['rationCardNo'].dirty && UserLoginForm.hasError('required','rationCardNo') "   class="text-danger bold"> *Card Number is required</small> -->
+    <!-- </p> -->
+     <!-- <p> -->
+    <input type="password" formControlName="password" class="pass"placeholder="password" [type]="show ? 'text' : 'password'"  required/>
+    <!-- <mat-error *ngIf="getError('required')">
+        Password is required
+      </mat-error> -->
+      <!-- <mat-error *ngIf="getError('minlength')">
+        Password should be minimum 8 length
+      </mat-error> -->
+      <!-- <small *ngIf=" UserLoginForm.controls['password'].dirty && UserLoginForm.hasError('required','password') "   class="text-danger bold"> *Password is required</small> -->
+      <div  *ngIf="UserLoginForm.controls['password'].invalid && (UserLoginForm.controls['password'].dirty || UserLoginForm.controls['password'].touched)" class="alert">
+        <div *ngIf="UserLoginForm.controls['password'].errors" style="color: red;">
+        * Enter Your Password
+      </div>
+    </div>
+    <!-- </p> -->
+    <!-- <div style="margin-bottom:-40px">
+      <input matTooltip="show password" type="checkbox" style="width:5%;margin-top: 10px;height: 20%;" (click)="password()"  value="{{ show ? 'Hide' : 'Show'}}"/>  {{ show ? 'Hide' : 'Show'}} Password 
+    </div> -->
+    
+    <p [matTooltip]="'*required allField to login '"
+    [matTooltipDisabled]="UserLoginForm.valid" >
+     <button style="margin-right: 26px" class="button" (click) ="onSubmit()" [disabled]="UserLoginForm.invalid"  ><span class="entypo-login" ><i class="fa fa-lock" ></i></span> Login</button>
+  </p>
+  </form>
+  
+</body>
+
+
+

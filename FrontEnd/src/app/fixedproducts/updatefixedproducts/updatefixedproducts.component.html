@@ -1,0 +1,93 @@
+
+<!-- <app-logout-navbar></app-logout-navbar> -->
+<p>
+    <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+        <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+     <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span style="margin-left: 10px; ">Smartrationing</span>
+    <span class="example-spacer"></span>
+    <div class="Home" style="margin-right:20px">
+      <button mat-button routerLink="/AdminsideComponent" >Home</button>
+    </div> 
+    <div class="RationCard" style="margin-right:20px">
+      <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+    </div> 
+     <div class="Stocks" style="margin-right:20px">
+        <button mat-button routerLink="/AllProductsComponent" >Stocks</button>
+      </div>  
+      <div class="FixedProducts" style="margin-right:20px">
+        <button mat-button routerLink="/AllfixedproductsComponent" >FixedProducts</button>
+      </div> 
+      <div class="Orders" style="margin-right:20px">
+        <button mat-button routerLink="/AllorderdetailsComponent" >Orders</button>
+      </div> 
+    <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+        <mat-menu #menu="matMenu">
+          <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+          <!-- <button mat-menu-item >My Profile</button> -->
+          <button mat-menu-item  routerLink="/" >Log Out
+          </button>
+        </mat-menu>
+        <mat-icon>power_settings_new
+        </mat-icon>
+      </button>
+   
+  </mat-toolbar>
+  </p> 
+  
+
+
+<div class="d-flex flex-row justify-content-center container" 
+                             style="margin-top:9%;margin-left: 15%;  " *ngIf="ready">
+    <div class="row">
+        <div class="header col-md-12 text-center" >
+            <h1 style=" font-weight: bold; font-size: 25px; margin-right:50%">Update FixedProduct</h1>
+        </div>
+        <form class="col-md-12" name="editForm" [formGroup]="editProductForm" autocomplete="off">
+            <!-- class="col-md-5 m-3" -->
+                <mat-form-field  appearance="fill" >
+                    <mat-label>Product Name</mat-label>
+                    <input formControlName="productName" [readonly]="true" matInput [type]="'text'" required />
+                    <mat-error *ngIf="!editProductForm.controls['productName'].valid">
+                        Product Name is required
+                    </mat-error>
+                </mat-form-field><br>
+                <!-- class="col-md-5 m-3" -->
+                <mat-form-field  appearance="fill" >
+                    <mat-label>quantity</mat-label>
+                    <input formControlName="productQuantity" (keypress)="OnlyNumbersAllowed($event)" [type]="'number'" matInput required />
+                    <mat-error *ngIf="!editProductForm.controls['productQuantity'].valid">
+                        quantity is required
+                    </mat-error>
+                </mat-form-field><br>
+                <!-- class="col-md-5 m-3" -->
+                <mat-form-field  appearance="fill" >
+                    <mat-label>productPrice</mat-label>
+                    <input formControlName="productPrice" (keypress)="OnlyNumbersAllowed($event)" [type]="'number'" matInput required />
+                    <mat-error *ngIf="!editProductForm.controls['productPrice'].valid">
+                        productPrice is required
+                    </mat-error>
+                </mat-form-field><br>
+
+                <mat-form-field  appearance="fill" >
+                    <mat-label>Card Type</mat-label>
+                    <input formControlName="cardType" [readonly]="true" matInput [type]="'text'" required />
+                    <mat-error *ngIf="!editProductForm.controls['cardType'].valid">
+                        Product Name is required
+                    </mat-error>
+                </mat-form-field>
+    
+             <div class="d-flex flex-row p-3 justify-content-auto"> 
+                
+                    <button [disabled]="editProductForm.invalid && editProductForm.untouched" (click)="onSubmit(productId)" class="btn btn-primary m-2" matTooltip="Submit">
+                        Update
+                    </button>
+                    <div></div>
+                    <button class="btn btn-danger    m-2 " (click)="gotoList()"  matTooltip="Cancel">Cancel</button>
+                    
+                </div>
+        </form>
+    </div>
+    </div>

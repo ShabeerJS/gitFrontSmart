@@ -1,0 +1,59 @@
+<!-- <p>admin-login works!</p> -->
+<!-- <app-navbar></app-navbar> -->
+<app-navbar></app-navbar>
+<body>
+ 
+     <!-- <img src="../../assets/images/image1.jpg.png"   alt="logo" />  -->
+    <!-- <div class="row"> -->
+    
+    <div class="col-8 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center  ">
+   
+    <form [formGroup]="AdminLoginForm" class="login" autocomplete="off">
+      <!-- <h1 style="font-size: 50px ; text-align: center;" >Admin</h1>  -->
+        <!-- <h2><span class="entypo-login"><i class="fa fa-sign-in"></i></span> Login</h2> -->
+        <h1 style="font-weight: bolder;font-size: 40px;margin-right: 30px;">Admin</h1>
+      
+        <!-- <span class="entypo-user inputUserIcon">
+           <i class="fa fa-user"></i>
+         </span> -->
+        <input type="text" formControlName="emailId" class="user" placeholder="e-mail"/>
+        <div  *ngIf="AdminLoginForm.controls['emailId'].invalid && (AdminLoginForm.controls['emailId'].dirty || AdminLoginForm.controls['emailId'].touched)" class="alert">
+          <div *ngIf="AdminLoginForm.controls['emailId'].errors" style="color: red;">
+          * Email  is required
+        </div>
+        </div>
+        <!-- <div class="text-danger" *ngIf="rationAdminName.errors?.['required']">*Name is required</div> -->
+        <!-- <small class="ale" *ngIf=" AdminLoginForm.controls['rationAdminName'].dirty && AdminLoginForm.hasError('required','rationAdminName') "   class="text-danger bold"> *Name is required</small> -->
+      
+     
+        <!-- <span class="entypo-key inputPassIcon">
+           <i class="fa fa-key"></i>
+         </span> -->
+         <div>
+        <input type="password" class="pass"placeholder="Password" formControlName="password" [type]="show ? 'text' : 'password'" class="entypo-login" class="fa fa-lock" > 
+       
+        <div  *ngIf="AdminLoginForm.controls['password'].invalid && (AdminLoginForm.controls['password'].dirty || AdminLoginForm.controls['password'].touched)" class="alert">
+          <div *ngIf="AdminLoginForm.controls['password'].errors" style="color: red;">
+          * Enter Your Password
+        </div>
+      </div> <!-- <small class="ale" *ngIf=" AdminLoginForm.controls['password'].dirty && AdminLoginForm.hasError('required','password') "   class="text-danger bold " > *password is required</small> -->
+     Don't have an account sign up here <a style="margin-right:30px" href="\AdminsignupComponent"> sign in?</a>  
+    </div>
+   
+      <!-- <div style="margin-bottom:-40px">
+        <input matTooltip="show password" type="checkbox" style="width:5%;margin-top: 10px;height: 20%;" (click)="password()"  value="{{ show ? 'Hide' : 'Show'}}"/>  {{ show ? 'Hide' : 'Show'}} Password 
+      </div> -->
+      <div [matTooltip]="'*required allField to login '"
+      [matTooltipDisabled]="AdminLoginForm.valid" >
+        <button  class="button" (click) ="onSubmit()"  [disabled]="AdminLoginForm.invalid" >
+            <span class="entypo-login" ><i class="fa fa-lock" ></i></span>Login</button>
+          </div>
+    
+  
+      </form>
+    </div>
+    
+    <!-- </div> -->
+    </body>
+
+    <!--  -->

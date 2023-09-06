@@ -1,0 +1,138 @@
+
+<!-- <app-logout-navbar></app-logout-navbar>  -->
+  
+<p>
+  <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+      <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+   <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span style="margin-left: 10px; ">Smartrationing</span>
+  <span class="example-spacer"></span>
+  <div class="Home" style="margin-right:20px">
+    <button mat-button routerLink="/AdminsideComponent" >Home</button>
+  </div> 
+  <div class="RationCard" style="margin-right:20px">
+    <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+  </div> 
+   <div class="Stocks" style="margin-right:20px">
+      <button mat-button routerLink="/AllProductsComponent" >Stocks</button>
+    </div>  
+     <div class="FixedProducts" style="margin-right:20px">
+      <button mat-button routerLink="/AllfixedproductsComponent" >FixedProducts</button>
+    </div> 
+    <!-- <div class="Orders" style="margin-right:20px">
+      <button mat-button routerLink="/AllorderdetailsComponent" >Orders</button>
+    </div>  -->
+  <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+      <mat-menu #menu="matMenu">
+        <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+        <!-- <button mat-menu-item >My Profile</button> -->
+        <button mat-menu-item  routerLink="/AdminLoginComponent" >Log Out
+        </button>
+      </mat-menu>
+      <mat-icon>power_settings_new
+      </mat-icon>
+    </button>
+ 
+</mat-toolbar>
+</p> 
+
+
+<!-- <h5><a routerLink="/AdminsideComponent" routerLinkActive="active"><button class = "btn btn-primary" style="margin-left: 1265px;  width: 5%;" >Back</button></a></h5> -->
+<br><br>
+<br><br>
+
+<div *ngIf="OrderDetails.length<=0">
+  <h1 style="justify-content: center;margin-left:40%;margin-top:12%;font-weight: bold;font-size:40px;">No Orders FOund</h1>
+
+</div>
+<div *ngIf="OrderDetails.length>0">
+<div class="tab">
+
+<div class="container">
+
+<!-- <h2><button mat-raised-button style="background-color:rgb(34, 77, 34) ;margin-left: 850px;" (click) = "createFixedProduct()" class = "btn btn-success">Add Stocks</button></h2> -->
+<h1 class="forhead" > Order List
+
+</h1>
+<!-- <input style="float: right" type="text" placeholder="search" [(ngModel)]="searchName" >  -->
+<table class = "table table-striped table-bordered table-hover">
+<thead class="text-center">
+ 
+ 
+  
+  <tr style="font-size: 20px">
+      <th>RationCardNo</th>
+      <th>Date</th>
+      <th>TotalPrice</th>
+       <th>orderStatus</th>
+       <th>Actions</th>
+      
+  </tr>
+</thead>
+<tbody>
+  <tr style="font-size: 16px;text-align: center;" *ngFor="let orderDetails of OrderDetails   | paginate
+  : {
+      itemsPerPage: tableSize,
+      currentPage: page,
+      totalItems: count
+    };
+let i = index" >
+      <!-- <td style="font: size 200px;"> {{ orderDetails.orderId }} </td> -->
+      <td> {{ orderDetails.rationNo }} </td>
+      <td> {{ orderDetails.localDate }} </td>
+      <td> {{ orderDetails.price | currency:'INR'}} </td>
+      <td> {{ orderDetails.orderStatus }} </td>
+      
+        <td> 
+         
+             
+          <!-- <button (click) = "deleteFixedProduct(fixedProducts.productId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button> -->
+          <button class = "btn btn-primary"(click)="openDialog(orderDetails.fixedProduct)" style="margin-left: 10px">orderedProducts</button> 
+        
+          <button *ngIf="orderDetails.orderStatus==this.status"  (click) = "updateOrderdetails(orderDetails.orderId)" class = "btn btn-warning" style="margin-left: 10px"> Update</button> 
+        
+
+        </td>  
+        
+  </tr>
+  
+</tbody>
+
+</table>
+<div class="d-flex justify-content-center">
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" href="/AllorderdetailsComponent">&times;</a>
+		<div class="content" *ngFor="let orderDetails of OrderDetails">
+			{{orderDetails.rationNo}}
+		</div> -->
+	
+  
+
+
+	

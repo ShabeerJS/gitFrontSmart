@@ -1,0 +1,89 @@
+
+<!-- <app-logout-navbar></app-logout-navbar> -->
+
+
+<p>
+    <mat-toolbar style="background: rgb(21, 70, 25); box-shadow: 0 4px 2px -2px">
+        <img class="forimage" src="../../assets/images/download.jpg" style="margin-bottom: 9px;"  alt="logo" />
+     <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <span style="margin-left: 10px; ">Smartrationing</span>
+    <span class="example-spacer"></span>
+    <div class="Home" style="margin-right:20px">
+      <button mat-button routerLink="/AdminsideComponent" >Home</button>
+    </div> 
+    <div class="RationCard" style="margin-right:20px">
+      <button mat-button routerLink="/AllrationcardComponent" >RationCard</button>
+    </div> 
+     <div class="Stocks" style="margin-right:20px">
+        <button mat-button routerLink="/AllProductsComponent" >Stocks</button>
+      </div>  
+       <div class="FixedProducts" style="margin-right:20px">
+        <button mat-button routerLink="/AllfixedproductsComponent" >FixedProducts</button>
+      </div> 
+       <div class="Orders" style="margin-right:20px">
+        <button mat-button routerLink="/AllorderdetailsComponent" >Orders</button>
+      </div>  
+    <button class="logoutButton"  mat-icon-button [matMenuTriggerFor]="menu"  matTooltip="Log Out">
+        <mat-menu #menu="matMenu">
+          <!-- <button mat-menu-item *ngIf="isAdmine" (click)="onEdit()">My Profile</button> -->
+          <!-- <button mat-menu-item >My Profile</button> -->
+          <button mat-menu-item  routerLink="/AdminLoginComponent" >Log Out
+          </button>
+        </mat-menu>
+        <mat-icon>power_settings_new
+        </mat-icon>
+      </button>
+   
+  </mat-toolbar>
+  </p> 
+  
+
+
+
+
+
+
+
+<div class="d-flex flex-row justify-content-center container" 
+                             style="margin-top:15%;margin-left: 15%;  " >
+    <div class="row">
+        <div class="header col-md-12 text-center" >
+            <h1 style=" font-weight: bold; font-size: 25px; margin-right:50%">Update Status</h1>
+        </div>
+        <form class="col-md-12" name="editForm" [formGroup]="OrderForm" (submit)="updateWallet()" autocomplete="off">
+           
+               
+
+                <div>
+                    <mat-form-field class="full-width" >
+                    <mat-select class="color" formControlName="orderStatus" aria-placeholder="select" placeholder="orderStatus" >
+                        
+                        <!-- <mat-option value="NPHH" >NPHH</mat-option> -->
+                        <mat-option value="PRODUCT_RECIEVED">PRODUCT_RECIEVED</mat-option>
+                       
+                    </mat-select>
+                </mat-form-field>
+                  </div>
+
+              
+             <div class="d-flex flex-row p-3 justify-content-auto"> 
+                
+                    <!-- <button [disabled]="orderdetailsForm.invalid && orderdetailsForm.untouched" (click)="onSubmit()" class="btn btn-primary m-2" matTooltip="Submit"> -->
+                        <button
+                        type="submit"
+                        class="btn btn-success btn-lg mb-1"
+                        style="margin-left: 40px"
+                        [disabled]="OrderForm.invalid"
+                      >
+                        Submit
+                      </button>
+                    <div></div>
+                    <!-- <button class="btn btn-danger    m-2 " (click)="gotoList()"  matTooltip="Cancel">Cancel</button> -->
+                    
+                </div>
+        </form>
+    </div>
+    </div>
+

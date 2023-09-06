@@ -1,0 +1,63 @@
+<!-- <p>fixed-products works!</p> -->
+<body>
+    <div class="container " >
+<div class="d-flex flex-row justify-content-center container " [hidden]="submitted" style="width: 40px ;height: 10px;">
+    <div class="row">
+        <div class="panel border ">
+      <!-- <div  style="padding: 80px  1px;"><h1 style="color: white">Add FixedProducts</h1> -->
+        <div class="panel-heading">
+            <h3 class="pt-6 font-weight-bold " style="color: white">Add FixedProducts</h3>
+        </div>
+   <form class="form" [formGroup]="addFixedProductForm">
+      <div>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>FixedProductName</mat-label>
+            <input formControlName="productName" matInput [type]="'productName'" required />
+            <mat-error *ngIf="!addFixedProductForm.controls['productName'].valid">
+                FixedProductName is required
+            </mat-error>
+        </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field class="full-width" appearance="outline">
+          <mat-label>FixedProductQuantity</mat-label>
+          <input formControlName="productQuantity" matInput [type]="'number'" required />
+          <mat-error > 
+            <!-- *ngIf="!addForm.controls['educationInfo'].valid" -->
+            FixedProductQuantity is required
+          </mat-error>
+      </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>FixedProductPrice</mat-label>
+        <input formControlName="productQuantity" matInput [type]="'number'" required />
+        <mat-error > 
+          <!-- *ngIf="!addForm.controls['educationInfo'].valid" -->
+          FixedProductPrice is required
+        </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="full-width" appearance="outline">
+    <mat-select class="color" formControlName="cardType" aria-placeholder="select" placeholder="CardType" required>
+   
+        <mat-option value="option" >NPHH</mat-option>
+        <mat-option value="option">PHH</mat-option>
+       
+    </mat-select>
+</mat-form-field>
+  </div>
+   <div class= "d-flex flex-row p-3 justify-content-auto">
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+      <div ></div>
+       <button  class="btn btn-warning ml-3 btn-space" (click)="addFixedProductForm.reset()">Cancel</button>
+      </div>
+    </form>
+  </div> 
+  </div>
+  </div>
+</div>
+
+  </body>

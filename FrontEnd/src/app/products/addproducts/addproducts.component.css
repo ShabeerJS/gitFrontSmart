@@ -1,0 +1,64 @@
+ /* .loginButton:hover{
+    background-color: blue;
+    color: blanchedalmond;
+    font-weight: bold;
+} */
+/* body{
+    margin-top: -1%;
+    background-color: white; 
+   overflow-y: hidden;
+   
+} */
+h1{
+text-align: center;
+ padding-top: 80px   ;
+
+}
+.form{
+    margin-bottom: 20%;
+}
+.btn-space{
+    margin-left: 13px;
+} 
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .logoutButton{
+    float:right
+  }
+  .forimage{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+  }
+
+/* body{
+    background: rgb(90, 121, 116);
+}
+h1{
+text-align: center;
+ padding-top: 80px   ;
+
+}
+.panel-heading{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.panel{
+    min-height: 30px;
+    border-radius: 12px;
+    background-color: black;
+    margin-top: 45%;
+    padding-top: 10px;
+   padding-bottom: 5px;
+}
+.form{
+  
+    margin-bottom:5%;
+  
+}
+.btn-space{
+    margin-left: 13px;
+} */

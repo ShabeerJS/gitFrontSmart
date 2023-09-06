@@ -1,0 +1,87 @@
+/* .container{
+    flex-direction: column;
+} */
+/* .overall{
+    background-color: #f8eeee;
+} */
+
+
+.card{
+    width: 200px;
+    height: 270px;
+    background: #e5e5e5;
+    border: none !important;
+    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3),
+                  inset 4px 4px 10px white;
+    border-radius: 20px !important;
+    overflow: hidden;
+    justify-content: center;
+    /* align-items: center; */
+}
+.card:hover{
+    box-shadow:   15px 20px 20px rgba(0, 0, 0, 0.3),
+                  inset 4px 4px 10px white;
+                  transition: 0.3s;
+
+} 
+ 
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.logoutButton{
+  float:right
+}
+.forimage{
+  width: 50px;
+  height: 50px;
+  border-radius: 150px;
+}
+
+.ii{
+  height: 150px;
+}
+
+
+
+
+/* .example-container {
+    margin-top: -10px;
+    /* width: 100vw; */
+    /* height: 88.5vh; */
+    /* border: 1px solid #555; */
+  /* }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  img{
+    width: 50px;
+    height: 50px;
+    border-radius: 150px;
+  }
+  .side{
+    margin:12px 2px !important;
+    color: white;
+  }
+  .drawer-content{ */
+    /* background: #0e1e2e; */
+    /* background:  rgb(21, 70, 25);
+  }
+
+  .background{
+    background-color: greenyellow;
+  }  */
+
+  /* mat-sidenav-container{
+    height: calc(205vh-115vh);
+  }
+  mat-sidenav{
+    width: 200px;
+    /* height: 500px; */
+    /* background-color: brown;
+  }
+  mat-sidenav-content{
+    height: 88vh;
+  }  */
